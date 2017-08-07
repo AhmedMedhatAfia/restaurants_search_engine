@@ -1,0 +1,25 @@
+.result-list{
+    background-color: #f9f3f1;
+    color: black;
+    width: 93%;
+    border: 1px solid black;
+}
+.result-list > ul{
+    list-style: none;
+    padding: 10px 20px;
+}
+.result-list  li:hover{
+    background-color: darkgray;
+    cursor: pointer;
+}
+.result-list li {
+    background-color: #f9f3f1;
+}
+
+.result-list li .left{
+    float:left;
+}
+
+.result-list li .right{
+    float:right;
+}
