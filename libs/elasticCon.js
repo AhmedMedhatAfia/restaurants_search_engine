@@ -35,8 +35,10 @@ var self = module.exports = {
                     'id': {'type': 'integer'},
                     'name_en': {'type': 'text'},
                     'name_ar': {'type': 'text'},
-                    'opening_hr': {'type': 'date', 'format': 'HH:mm:ss a'},
-                    'closing_hr': {'type': 'date', 'format': 'HH:mm:ss a'},
+                    'opening_hr_12': {'type': 'date', 'format': 'HH:mm:ss a'},
+                    'closing_hr_12': {'type': 'date', 'format': 'HH:mm:ss a'},
+                    'opening_hr_24': {'type': 'date', 'format': 'HH:mm'},
+                    'closing_hr_24': {'type': 'date', 'format': 'HH:mm'},
                     'reviews_count': {'type': 'integer'},
                 }
             }
@@ -74,7 +76,7 @@ var self = module.exports = {
                         "minimum_should_match": "30%"
                     }
                 }
-            ]
+            ];
         }
         esclient.search({
             index: es_index,
@@ -88,6 +90,14 @@ var self = module.exports = {
                 query:{
                     bool: {
                         must: condition,
+                        // filter: {
+                        //     "bool": {
+                        //         "must": [
+                        //             { "range": { "opening_hr_12" : { "lte" : "now", "format": "HH:mm:ss a" }}},
+                        //             { "range": { "closing_hr_12" : { "gt" : "now", "format": "HH:mm:ss a" }}}
+                        //         ]
+                        //     }
+                        // },
                         "minimum_should_match" : "30%",
                         "boost" : 1.0
                     }

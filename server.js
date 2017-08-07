@@ -40,4 +40,4 @@ var server = app.listen(app_port,app_address, function () {
     console.log("Our app listening at http://%s:%s", host, port)
 });
 
-// elasticsearch_client.deploy(csv_parser.parser);
+elasticsearch_client.deploy(csv_parser.parser);
