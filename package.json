@@ -1,8 +1,8 @@
 {
   "name": "elmenus",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "using NodeJs 7.0.0 and Express Framework & ElasticSearch 5.5",
+  "main": "config.js",
   "dependencies": {
     "async": "^2.5.0",
     "body-parser": "^1.17.2",
@@ -13,13 +13,22 @@
     "get-json": "^0.0.3",
     "futures": "^2.3.3",
     "multer": "^1.3.0",
-    "http": "^0.0.0"
+    "http": "^0.0.0",
+    "moment": "^2.18.1"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AhmedMedhatAfia/restaurants_search_engine.git"
+  },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AhmedMedhatAfia/restaurants_search_engine/issues"
+  },
+  "homepage": "https://github.com/AhmedMedhatAfia/restaurants_search_engine#readme"
 }

@@ -19,7 +19,7 @@ app.use(function (req, res, next) {
 app.post('/search', urlencodedParser,function (req, res) {
     var word = req.body.word? req.body.word : null;
 
-    elasticsearch_client.search(word,1,function(data) {
+    elasticsearch_client.search(word,1,null,function(data) {
         res.end(data)
     });
 });
@@ -28,8 +28,9 @@ app.get('/search',function (req, res) {
 
     var word = req.query.word? req.query.word : null;
     var page = req.query.page && req.query.page>0 ? req.query.page : 1;
+    var time = req.query.time? req.query.time : null;
 
-    elasticsearch_client.search(word,page,function(data) {
+    elasticsearch_client.search(word,page,time,function(data) {
         res.end(data)
     });
 });
